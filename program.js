@@ -7,28 +7,13 @@ process.stdin.on('readable', function() {
         switch(instruction){
         	case '/exit':
         		process.stdout.write('Quitting app!\n');
-        		console.log(process.env.lang);
-            	console.log(process.versions.node);
+        		console.log('\r\nLanguage: ' + process.env.lang + '\r\nVersion: ' + process.versions.node);
+            	
             	break;
             default:
             	process.stderr.write('Wrong instruction!\n');
-            	console.log(process.env.lang);
-            	console.log(process.versions.node);
+            	console.log('\r\nLanguage: ' + process.env.lang + '\r\nVersion: ' + process.versions.node);
         };
     }
-        /*
-        if (instruction === '/exit') {
-            process.stdout.write('Quitting app!\n');
-            //console.log(process.env.lang + '<br>' + process.versions.node); 
-            //<br> nie działa jak w js :-)
-            console.log(process.env.lang);
-            console.log(process.versions.node);
-            process.exit();
-        } else {
-            process.stderr.write('Wrong instruction!\n');
-            console.log(process.env.lang);
-            console.log(process.versions.node);
-        }
-        */
-    
+        
 });
